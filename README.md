@@ -1,1 +1,1 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: CC0](https://img.shields.io/badge/License-CC0-red.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
