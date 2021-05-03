@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './../../Assets/images/logo/logo_ushida.png'
 import './Header.scss';
@@ -20,14 +20,14 @@ function Header(props) {
                         <Link to='/' className='header-link'>
                             <img src={Logo} alt="Logo" className="header-logo"/>
                         </Link>
-                        <Link to='/' className='header-link'>
-                            <span>Home</span>
-                        </Link>
                         <Link to='/products' className='header-link'>
                             <span>Products</span>
                         </Link>
                         <Link to='/portfolio' className='header-link'>
                             <span>Portfolio</span>
+                        </Link>
+                        <Link to='/credits' className='header-link'>
+                            <span>Credits</span>
                         </Link>
                         <Link to='/about' className='header-link'>
                             <span>About</span>
