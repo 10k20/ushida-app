@@ -22,6 +22,9 @@ header {
             display: flex;
             .header-link {
                 margin-left: 2rem;
+                .header-logo {
+                    height: 36px;
+                }
                 span {
                     color: #fff;
                 }

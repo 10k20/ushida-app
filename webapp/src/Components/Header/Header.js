@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './../../Assets/images/logo/logo_ushida.png'
 import './Header.scss';
 
 function Header(props) {
@@ -16,6 +17,9 @@ function Header(props) {
         <header>
             <div className='header-wrapper'>
                     <div className='header-navigation'>
+                        <Link to='/' className='header-link'>
+                            <img src={Logo} alt="Logo" className="header-logo"/>
+                        </Link>
                         <Link to='/' className='header-link'>
                             <span>Home</span>
                         </Link>

@@ -1,5 +1,5 @@
 import {React, useEffect } from 'react'
-import {TweenLite, TweenMax, Power2, gsap } from 'gsap';
+import {Power2, gsap } from 'gsap';
 import './Ball.scss';
 
 const Ball = () => {
@@ -106,7 +106,7 @@ const Ball = () => {
     }
 
     return (
-        <ball className="ball"></ball>
+        <div className="ball"></div>
     )
 }
 export default Ball
