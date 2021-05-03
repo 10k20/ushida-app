@@ -8,4 +8,7 @@ Download built binaries from the [releases section](https://github.com/10k20/ush
 
 # License
 
-This software is distributed according to the rules of the license СС0:          [![License: CC0](https://img.shields.io/badge/License-CC0-red.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+This software is distributed according to the rules of the license:
+
+
+[![License: CC0](https://img.shields.io/badge/License-CC0-red.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
