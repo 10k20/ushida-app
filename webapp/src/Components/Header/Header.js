@@ -18,7 +18,7 @@ function Header(props) {
             <div className='header-wrapper'>
                     <div className='header-navigation'>
                         <Link to='/' className='header-link'>
-                            <img src={Logo} alt="Logo" className="header-logo"/>
+                            <span className='header-logo'>Ushida</span>
                         </Link>
                         <Link to='/products' className='header-link link' >
                             <span>Products</span>

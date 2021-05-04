@@ -88,6 +88,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Gang-of-Three";
+    src: url('./fonts/gang-of-three.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/gang-of-three.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./fonts/gang-of-three.woff') format('woff'), /* Pretty Modern Browsers */
+    url('./fonts/gang-of-three.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
 p {
     margin: 0;
 }
