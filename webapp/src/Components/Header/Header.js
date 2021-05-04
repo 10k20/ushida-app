@@ -20,16 +20,16 @@ function Header(props) {
                         <Link to='/' className='header-link'>
                             <img src={Logo} alt="Logo" className="header-logo"/>
                         </Link>
-                        <Link to='/products' className='header-link'>
+                        <Link to='/products' className='header-link link' >
                             <span>Products</span>
                         </Link>
-                        <Link to='/portfolio' className='header-link'>
+                        <Link to='/portfolio' className='header-link link'>
                             <span>Portfolio</span>
                         </Link>
-                        <Link to='/credits' className='header-link'>
-                            <span>Credits</span>
+                        <Link to='/contacts' className='header-link link'>
+                            <span>Contacts</span>
                         </Link>
-                        <Link to='/about' className='header-link'>
+                        <Link to='/about' className='header-link link'>
                             <span>About</span>
                         </Link>
                     </div>
