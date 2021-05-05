@@ -1,14 +1,14 @@
 @import './../../Assets/Colors.scss';
 
 .products {
-    width: 60rem;
+    width: 80rem;
     margin: 0 auto;
     .products-wrapper {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         .product-card {
             position: relative;
-            width: 18rem;
+            max-width: 18rem;
             height: 24rem;
             text-align: center;
             color: $text-color;
@@ -18,6 +18,15 @@
             justify-content: space-between;
             border: 1px solid rgba(228, 228, 228, 0.05);
             overflow: hidden;
+            &-category {
+                position: absolute;
+                z-index: 2;
+                right: 0;
+                top: 1.5rem;
+                padding: 0.1rem 0.5rem;
+                backdrop-filter: blur(15px);
+                background-color: rgba(255, 255, 255, 0.185);
+            }
             &-image {
                 position: relative;
                 height: 10rem;
@@ -40,13 +49,20 @@
                 .product-card-body {
                     width: 100%;
                     &-title {
-                        font-size: 1.5rem;
+                        font-size: 1.25rem;
                         font-weight: 500;
                         margin-bottom: 0.5rem;
                         text-transform: uppercase;
                     }
                     &-description {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
                         font-weight: 300;
+                        color: $dark-text-color;
+                        height: 4.75rem;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
                     }
                 }
                 .product-card-footer {
