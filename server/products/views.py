@@ -14,3 +14,4 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_fields = ('type',)
+    

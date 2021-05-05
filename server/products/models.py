@@ -12,6 +12,7 @@ class Product(models.Model):
     price = models.IntegerField()
     author = models.CharField(max_length=50)
     type = models.CharField(max_length=120, choices=PRODUCT_TYPE_CHOICES, default="Photo")
+    image = models.FileField(upload_to='media/product-images')
 
     def __str__(self):
         return str(self.title)
