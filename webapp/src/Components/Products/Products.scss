@@ -3,6 +3,7 @@
 .products {
     width: 80rem;
     margin: 0 auto;
+    padding: 0 1.5rem;
     .products-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -18,6 +19,7 @@
             justify-content: space-between;
             border: 1px solid rgba(228, 228, 228, 0.05);
             overflow: hidden;
+            margin-bottom: 1.75rem;
             &-category {
                 position: absolute;
                 z-index: 2;
@@ -68,8 +70,6 @@
                 .product-card-footer {
                     display: flex;
                     justify-content: space-between;
-                    padding-top: 2rem;
-                    
                 }
             }
         }
