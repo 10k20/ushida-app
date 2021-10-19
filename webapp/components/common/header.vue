@@ -19,7 +19,9 @@
         </nuxt-link>
       </div>
       <div class='header-auth'>
-        <button class="button button-not-active sign-in">Sign In</button>
+        <nuxt-link :to="{ name: 'auth-login' }">
+          <button class="button button-not-active sign-in">Sign In</button>
+        </nuxt-link>
         <button class="button sign-up">Sign Up</button>
       </div>
     </div>

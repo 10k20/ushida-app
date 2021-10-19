@@ -84,6 +84,13 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  head: () => ({
+    title: 'Products'
+  })
+}
+</script>
 <style lang="scss" scoped>
 @import "~/assets/scss/colors.scss";
 

@@ -34,7 +34,7 @@
     </div>
     <div class="footer-mini">
       <div class="footer-mini-wrapper">
-        <div class="footer-mini-legal">&copy; Copyright {{ new Date().getFullYear() }}. <nuxt-link :to="{ name: 'policy' }"><span class="footer-link">All rights reserved.</span></nuxt-link></div>
+        <div class="footer-mini-legal">&copy; Copyright {{ new Date().getFullYear() }}. <nuxt-link :to="{ name: 'policy' }"><span class="footer-link link">All rights reserved.</span></nuxt-link></div>
         <div class="footer-mini-socials">
           <a href="https://www.facebook.com/" target="_blank"
              class="icon">
@@ -65,10 +65,6 @@ export default {
         name: 'Project',
         children: [
           {
-            name: 'Blog',
-            to: { name: 'about' },
-          },
-          {
             name: 'News',
             to: { name: 'about' },
           },
@@ -84,10 +80,14 @@ export default {
             name: 'Policy',
             to: { name: 'policy' },
           },
+          {
+            name: 'FAQ',
+            to: { name: 'faq' },
+          },
         ],
       },
       {
-        name: 'Creator',
+        name: 'Our team',
         children: [
           {
             name: 'Who we are?',
@@ -102,8 +102,8 @@ export default {
             to: { name: 'faq' },
           },
           {
-            name: 'FAQ',
-            to: { name: 'faq' },
+            name: 'Partners',
+            to: { name: 'partners' },
           },
         ],
       },
@@ -113,6 +113,19 @@ export default {
           {
             name: 'Vacancies',
             to: { name: 'faq' },
+          },
+          {
+            name: 'Oportunities',
+            to: { name: 'oportunities' },
+          },
+        ],
+      },
+      {
+        name: 'Work with us',
+        children: [
+          {
+            name: 'Our suggestions',
+            to: { name: 'suggestions' },
           },
         ],
       },
@@ -133,7 +146,7 @@ footer {
     margin: 0 6rem;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(228, 228, 228, 0.05);
+    border-bottom: 1px solid rgba($color: $border-color, $alpha: 0.05);
     .footer-info {
       font-size: 0.9rem;
       width: 30%;
@@ -175,11 +188,11 @@ footer {
       .directory-list {
         .directory-list-item {
           margin-bottom: 0.5rem;
-          cursor: pointer;
           .tag {
             vertical-align: super;
             font-size: 0.8rem;
             color: $base-blue;
+            cursor: pointer;
           }
         }
       }
@@ -198,8 +211,9 @@ footer {
         .footer-link {
           color: $base-blue;
         }
-        .footer-link:hover {
-          text-decoration: underline;
+        .link::before,
+        .link::after {
+            background: $base-blue;
         }
       }
       .footer-mini-logo {

@@ -1,7 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ushida-app',
+    title: 'Ushida',
+    titleTemplate: '%s | Ushida',
     htmlAttrs: {
       lang: 'en'
     },

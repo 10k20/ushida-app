@@ -1,6 +1,9 @@
 <template>
 </template>
-
 <script>
-export default {}
+export default {
+  head: () => ({
+    title: 'Main'
+  })
+}
 </script>
