@@ -18,15 +18,37 @@
           <span>About</span>
         </nuxt-link>
       </div>
-      <div class='header-auth'>
+      <div class='header-auth' v-if="!this.$store.state.auth.authStatus">
         <nuxt-link :to="{ name: 'auth-login' }">
           <button class="button button-not-active sign-in">Sign In</button>
         </nuxt-link>
-        <button class="button sign-up">Sign Up</button>
+        <nuxt-link :to="{ name: 'auth-registration' }">
+          <button class="button sign-up">Sign Up</button>
+        </nuxt-link>
+      </div>
+      <div class='header-auth' v-else>
+        <span>{{ this.$store.state.auth.profileData }}</span>
+        <button @click="signOut" class="button sign-up">Sign Out</button>
       </div>
     </div>
   </header>
 </template>
+<script>
+export default {
+  methods: {
+    signOut() {
+      this.$store.dispatch('changeAuthStatus', {
+        authStatus: false,
+        accessToken: null,
+        profileData: null
+      })
+      this.$storage.removeUniversal('accessToken')
+      this.$storage.removeUniversal('profileData')
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 header {
   color: #fff;

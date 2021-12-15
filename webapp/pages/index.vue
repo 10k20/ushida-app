@@ -4,6 +4,7 @@
 export default {
   head: () => ({
     title: 'Main'
-  })
+  }),
+  middleware: 'auth'
 }
 </script>

@@ -34,6 +34,7 @@ a {
     position: relative;
     text-transform: none;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .link::before,
@@ -175,4 +176,12 @@ audio, canvas, embed, iframe, img, object, svg, video {
 button {
   border: none;
   cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 0 transparent inset !important;
+    -webkit-background-color: transparent;
 }

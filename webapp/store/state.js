@@ -1,6 +1,6 @@
 const state = () => ({
   auth: {
-    authorized: false,
+    authStatus: false,
     accessToken: null,
     profileData: null
   },

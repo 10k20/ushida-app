@@ -23,8 +23,9 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  // plugins: [
+  //   '~/plugins/element-ui/element-ui',
+  // ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -36,11 +37,20 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources',
+    '@nuxtjs/axios',
+    '@nuxtjs/universal-storage',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/proxy',
   ],
+
+  axios: {
+    proxy: true
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+  
   
   vue: {
     config: {
