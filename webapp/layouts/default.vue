@@ -15,18 +15,16 @@ export default {
   components: {
     Header,
     Footer
-  }
+  },
 }
 </script>
 
 <style lang="scss">
 #__layout {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(255, 255, 255, 1);
   overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
-  background: url('~/assets/images/background_2.jpg') no-repeat center center fixed;
-  background-size: cover;
 }
 .app {
   display: flex;

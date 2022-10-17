@@ -11,7 +11,6 @@
   overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
-  background: url('~/assets/images/background_2.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 .app {

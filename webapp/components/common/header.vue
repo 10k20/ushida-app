@@ -1,40 +1,46 @@
 <template>
-  <header>
+  <header class="header">
     <div class='header-wrapper'>
-      <div class='header-navigation'>
-        <nuxt-link :to="{name: '/'}" class='header-link'>
-          <span class='header-logo'>Ushida</span>
+      <div class="header-logo">
+        <nuxt-link :to="{name: '/'}">
+          <span>Ushida</span>
         </nuxt-link>
+        <div @click="isAudioPlaying = !isAudioPlaying" class="header-audio" :class="{playing: isAudioPlaying}">
+          <div class="header-audio-fragment"></div>
+          <div class="header-audio-fragment"></div>
+          <div class="header-audio-fragment"></div>
+        </div>
+      </div>
+      <div class='header-navigation'>
         <nuxt-link :to="{name: 'products'}" class='header-link link' >
           <span>Products</span>
+        </nuxt-link>
+        <nuxt-link :to="{name: 'stories'}" class='header-link link'>
+          <span>Stories</span>
         </nuxt-link>
         <nuxt-link :to="{name: 'portfolio'}" class='header-link link'>
           <span>Portfolio</span>
         </nuxt-link>
-        <nuxt-link :to="{name: 'contacts'}" class='header-link link'>
-          <span>Contacts</span>
-        </nuxt-link>
         <nuxt-link :to="{name: 'about'}" class='header-link link'>
           <span>About</span>
         </nuxt-link>
-      </div>
-      <div class='header-auth' v-if="!this.$store.state.auth.authStatus">
-        <nuxt-link :to="{ name: 'auth-login' }">
-          <button class="button button-not-active sign-in">Sign In</button>
+        <nuxt-link :to="{name: 'sign-in'}" class='header-link link'>
+          <span>Sign In</span>
         </nuxt-link>
-        <nuxt-link :to="{ name: 'auth-registration' }">
-          <button class="button sign-up">Sign Up</button>
+        <nuxt-link :to="{name: 'sign-up'}" class='header-link button'>
+          <span>Sign Up</span>
         </nuxt-link>
-      </div>
-      <div class='header-auth' v-else>
-        <span>{{ this.$store.state.auth.profileData }}</span>
-        <button @click="signOut" class="button sign-up">Sign Out</button>
       </div>
     </div>
   </header>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      isAudioPlaying: false
+    }
+  },
   methods: {
     signOut() {
       this.$store.dispatch('changeAuthStatus', {
@@ -50,46 +56,75 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  color: #fff;
-  position: fixed;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem;
-  z-index: 20;
-  top: 0;
-  width: 100%;
-  .header-wrapper {
-    padding: 0.5rem 1.5rem;
+  @import "~/assets/scss/common.scss";
+
+  .header {
+    padding: 1rem 15.125rem;
+    color: $text-color;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    .header-auth {
+    &-wrapper {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .sign-up {
-        margin-left: 0.5rem;
+    }
+    &-navigation {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+    }
+    &-logo {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 2.25rem;
+      display: flex;
+      align-items: center;
+    }
+    .playing {
+      .header-audio-fragment:first-of-type {
+        animation: audioPlay infinite ease-in-out 0.75s;
+        animation-delay: 0;
+        animation-play-state: running;
+      }
+      .header-audio-fragment:nth-of-type(2) {
+        animation: audioPlay infinite ease-in-out 0.75s;
+        animation-delay: 0.5s;
+        animation-play-state: running;
+      }
+      .header-audio-fragment:last-of-type {
+        animation: audioPlay infinite ease-in-out 0.75s;
+        animation-delay: 1s;
+        animation-play-state: running;
       }
     }
-    .header-navigation {
+    &-audio {
+      margin-left: 1rem;
       display: flex;
-      .header-link {
-        margin-left: 2rem;
-        display: flex;
-        align-items: center;
-        .header-logo {
-          padding-top: 5px;
-          font-family: 'Gang-of-Three', Fallback, sans-serif;
-          font-size: 1.2rem;
-        }
-        span {
-          color: #fff;
-        }
-      }
-      .header-link:first-child {
-        margin-left: 0;
+      column-gap: 4px;
+      align-items: center;
+      cursor: pointer;
+      height: 2.25rem;
+      &-fragment {
+        height: 4px;
+        width: 4px;
+        background: $text-color;
+        border-radius: 2px;
+        transition: .2s ease-in-out;
+        animation-play-state: paused
       }
     }
   }
-}
+
+  @keyframes audioPlay {
+    0% {
+      height: 4px;
+    }
+    50% {
+      height: 12px;
+    }
+    100% {
+      height: 4px;
+    }
+  }
 </style>
